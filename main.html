@@ -1,176 +1,202 @@
 <html>
-	<head>
-		<title>Extreme Athletics</title>
-		<link href="css/normalize.css" rel="stylesheet" type="text/css">
-		<link href="css/style.css" rel="stylesheet" type="text/css">
-		<link href="css/smokePuff.css" rel="stylesheet" type="text/css">
-		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/smokeEffect.js" type="text/javascript"></script>
-		<script src="js/main.js"></script>
-		<script src="js/loader.js"></script>
-	</head>
-	<body>
-		<div id="loadScreen">
-			<h1>LOADING...</h1>
-		</div>
-		<div id="topFrame">
-			<header>EXTREME ATHLETICS</header>
-			<div id="special_box">
-				<div id="special_cover"></div>
-				<div id="special_button">SPECIAL OFFER</div>
-				<div id="special_content">
-					CHOREOGRAPHY SPECIAL<br />
-					$250/athlete<br />
-					- includes stunt instruction<br />
-					- choreography<br />
-					- music
+<head>
+	<title>Extreme Athletics</title>
+	<link href="css/normalize.css" rel="stylesheet" type="text/css">
+	<!-- <link href="css/style.css" rel="stylesheet" type="text/css"> -->
+	<style>
+	@font-face {
+		font-family: BradleyHand;
+		src: url(font/Bradley%20Hand%20ITC.TTF);
+	}
+	.sectionButton{
+		position:absolute;
+		width:100px;
+		height:100px;
+		background-color:#4169E1;
+		color:white;
+		border:2px solid;
+		border-color:#4CBB17;
+		border-radius:10px;
+	}
+
+	#galleryMain{
+		position:absolute;
+		top: 30px;
+		left: 0px;
+		width: 518px;
+		height: 481px;
+	}
+
+	#gallerySide{
+		position:absolute;
+		top: 30px;
+		right: 0px;
+		width: 160px;
+		height: 481px;
+		overflow: auto;
+	}
+
+	#gallerySlideBack{
+		position:absolute;
+		top: 0px;
+		left:0px;
+		height:100%;
+		width:100%;
+	}
+
+	.gallerySlide{
+		position:absolute;
+		top: 0px;
+		left:0px;
+		height:481px;
+		width:518px;
+	}
+
+	.galleryImage{
+		position:absolute;
+		top: 5px;
+		left:5px;
+		height:471px;
+		width:508px;
+		border-radius: 6px;
+		overflow:hidden;
+		text-align:center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.galleryDesc{
+		position:absolute;
+		top:471px;
+		left:0px;
+		width:508px;
+		background-color:rgb(127,127,127);
+		background-color:rgba(127,127,127,0.7);
+	}
+
+	.galleryDescBack{
+		position:absolute;
+		top:0px;
+		left:0px;
+		width:508px;
+	}
+
+	.galleryDescText{
+		float:left;
+		width:508px;
+		z-index:6000;
+	}
+
+	.galleryImage img{
+		max-height:471px;
+		max-width:508px;
+	}
+
+	.galleryThumb{
+		position:relative;
+		height:111px;
+		width:118px;
+		background-image:url('../image/14.PNG');
+	}
+
+	.galleryThumbImage{
+		position:absolute;
+		top: 5px;
+		left:5px;
+		height:101px;
+		width:108px;
+		border-radius: 6px;
+		overflow:hidden;
+		text-align:center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.galleryThumbImage img{
+		max-height:100%;
+		max-width:100%;
+	}
+
+	.galleryThumbClick{
+		position:absolute;
+		top: 5px;
+		left:5px;
+		height:101px;
+		width:108px;
+		border-radius: 6px;
+		overflow:hidden;
+		box-shadow: 0px 0px 3px 3px #040710;
+	}
+	</style>
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/smokeEffect.js" type="text/javascript"></script>
+	<!-- <script src="js/main.js"></script> -->
+</head>
+<body bgcolor="#ffffff">
+	<div id="topContainer" style="width:900px;margin: 0 auto;">
+		<header style="font-family:BradleyHand;font-size:50px;color:#4169E1;text-shadow:2px 2px 3px #4CBB17;text-align:center;">
+			EXTREME ATHLETICS
+		</header>
+		<main style="position:absolute;top:100px;width:900px;height:1000px;">
+			<div id="sectionButtons">
+				<div class="sectionButton" id="sectionButton1" style="left:0px;top:0px;">
+					Res Camps
+				</div>
+				<div class="sectionButton" id="sectionButton2" style="left:400px;top:0px;">
+					Private Camps
+				</div>
+				<div class="sectionButton" id="sectionButton3" style="left:800px;top:0px;">
+					Specials
+				</div>
+				<div class="sectionButton" id="sectionButton4" style="left:0px;top:300px;">
+					College Prep
+				</div>
+				<div class="sectionButton" id="sectionButton5" style="left:800px;top:300px;">
+					Choreography
+				</div>
+				<div class="sectionButton" id="sectionButton6" style="left:0px;top:600px;">
+					Day Camp
+				</div>
+				<div class="sectionButton" id="sectionButton7" style="left:800px;top:600px;">
+					Music
+				</div>
+				<div class="sectionButton" id="sectionButton8" style="left:0px;top:900px;">
+					Gallery
+				</div>
+				<div class="sectionButton" id="sectionButton9" style="left:400px;top:900px;">
+					Competitions
+				</div>
+				<div class="sectionButton" id="sectionButton10" style="left:800px;top:900px;">
+					Inquiries
 				</div>
 			</div>
-			<footer>
-				© Copyright 2014 Extreme Athletics.&nbsp;&nbsp;All rights reserved
-				<br>
-				<audio autoplay="autoplay" controls="controls" loop="loop">
-					<source src="music/track1.mp3" />
-				</audio>
-			</footer>
-			<div id="staticBack">
-				<img id="staticBackImage" src="image/30.PNG" />
-			</div>
-			<div id="b1Container">
-					<div id="b1Back"><img src="image/141.PNG" /></div>
-					<div id="b1Bubble">
-						<div id="b1B1"></div>
-						<div id="b1B2"></div>
-						<div id="b1B3"></div>
-						<div id="b1B4"></div>
-					</div>
-					<script type="text/javascript">
-						SmokeEffect.makeEffect("b1B1","image/39.PNG",20,20, 40, 50, 10, 20,-1100);
-						SmokeEffect.makeEffect("b1B2","image/white_megaphone.png",30,16, 80, 15, 70, -5,-1100);
-						SmokeEffect.makeEffect("b1B3","image/cheerleader.gif",20,15, 140, 15, 150, -5,-1100);
-						SmokeEffect.makeEffect("b1B4","image/megaphone.png",30,30, 160, 40, 190, 10,-1100);
-					</script>
-					<div id="b1Cover"></div>
-			
-				<div id="b1Shape"><img src="image/37.PNG" /></div>
-			</div>
-			<div id="b2Container">
-				<div id="b2On">
-					<div id="b2Back"><img src="image/145.PNG" /></div>
-					<div id="b2Bubble">
-						<div id="b2B1"></div>
-						<div id="b2B2"></div>
-						<div id="b2B3"></div>
-						<div id="b2B4"></div>
-					</div>
-					<script type="text/javascript">
-						SmokeEffect.makeEffect("b2B1","image/39.PNG",20,20, 290, 40, 280, 0,-1100);
-						SmokeEffect.makeEffect("b2B2","image/39.PNG",30,30, 380, 15, 400, -5,-1100);
-						SmokeEffect.makeEffect("b2B3","image/39.PNG",20,20, 440, 50, 490, 0,-1100);
-						SmokeEffect.makeEffect("b2B4","image/39.PNG",40,40, 480, 70, 510, 50,-1100);
-					</script>
-					<div id="b2Cover"></div>
+			<div id="sectionContent">
+				<div id="sectionContentBack" style="position:absolute;left:200px;top:300px;width:400px;height:400px;background-color:#4169E1;border:2px solid;border-color:#4CBB17;border-radius:10px;z-index:-1;"></div>
+				<div class="sectionContent" id="sectionContent1" style="position:absolute;left:150px;top:150px;width:600px;height:700px;color:white;">
+					Residential Camps<br />Launch each season with an Extreme Athletics cheer camp! Summer cheer camp provides your team with a jump start to your fall practice. Accelerate your team's skill level before your season starts by capitalizing on what they learn during the summer. Our all-inclusive camps offer sessions to refresh your team's basic skills and introduce them to new and challenging material.
 				</div>
-				<div id="b2Shape"><img src="image/52.PNG" /></div>
-			</div>
-			<div id="b3Container">
-				<div id="b3On">
-					<div id="b3Back"><img src="image/149.PNG" /></div>
-					<div id="b3Bubble">
-						<div id="b3B1"></div>
-						<div id="b3B2"></div>
-						<div id="b3B3"></div>
-					</div>
-					<script type="text/javascript">
-						SmokeEffect.makeEffect("b3B1","image/39.PNG",50,50, 10, 450, 10, 350,-1100);
-						SmokeEffect.makeEffect("b3B2","image/39.PNG",30,30, 295, 660, 380, 650,-1100);
-						SmokeEffect.makeEffect("b3B3","image/39.PNG",20,20, 290, 695, 330, 700,-1100);
-					</script>
-					<div id="b3Cover"></div>
+				<div class="sectionContent" id="sectionContent2" style="position:absolute;left:150px;top:150px;width:600px;height:700px;color:white;">
+					Private Camps<br />Hosted at a location of your choice; training can range from a few hours to as long as a week. Instruction includes clinics for Basic Skills, Transitions and Choreography.
 				</div>
-				<div id="b3Shape"><img src="image/68.PNG" /></div>
-			</div>
-			<div id="b4Container">
-				<div id="b4On">
-					<div id="b4Back"><img src="image/153.PNG" /></div>
-					<div id="b4Bubble">
-						<div id="b4B1"></div>
-						<div id="b4B2"></div>
-						<div id="b4B3"></div>
-						<div id="b4B4"></div>
-					</div>
-					<script type="text/javascript">
-						SmokeEffect.makeEffect("b4B1","image/39.PNG",20,20, 430, 490, 390, 495,-1100);
-						SmokeEffect.makeEffect("b4B2","image/39.PNG",50,50, 420, 430, 360, 420,-1100);
-						SmokeEffect.makeEffect("b4B3","image/39.PNG",20,20, 600, 290, 580, 200,-1100);
-						SmokeEffect.makeEffect("b4B4","image/39.PNG",40,40, 640, 260, 660, 200,-1100);
-					</script>
-					<div id="b4Cover"></div>
+				<div class="sectionContent" id="sectionContent3" style="position:absolute;left:150px;top:150px;width:600px;height:700px;color:white;">
+					Specials<br /><br />CHOREOGRAPHY SPECIAL<br />$250/athlete<br />- includes stunt instruction<br />- choreography<br />- music
 				</div>
-				<div id="b4Shape"><img src="image/59.PNG" /></div>
-			</div>
-			<div id="contentBack"><img src="image/189.PNG" /></div>
-			<div id="contentFrame">
-				<div class="insetFrame" id="iF1">
-					<div class="insetMain">
-						<span>Take your team to the extreme with customized music, choreography and training from Extreme Athletics, led by Sam Owens, head coach of the University of Minnesota Spirit Squad.</span>
-						<p></p>
-						<span>Extreme Athletics is founded on the principle of building great kids through the sport of cheerleading.  Coach Owens started in 1999, providing athletes and coaches with customized content and professional instruction designed specifically for the unique needs of their teams.  Good sportsmanship, safety, personal development and healthy competition are the goals for every Extreme Team!</span>
-						<p></p>
-						<span>Routines are carefully choreographed for each team and athletes are thoroughly instructed by experienced and professionally trained staff. Each routine is designed to challenge athletes while staying within the skill level of the team.  Instruction is provided using proper techniques and without compromising safety.</span>
-						<p></p>
-						<div class="paraTitle"><b>Be Your Best!</b></div><span>Extreme Athletics provides physical, emotional and intellectual coaching to young athletes through cheerleading, dance and music.  Its coaches focus on developing youth into emotionally and physically strong adults by helping each athlete reach his/her highest potential.  Athletes earn self esteem and pride from performing intense, disciplined routines that showcase their talent and skills.  Responsibility, a sense of belonging and sportsmanship are felt by working with other athletes and competing against other teams.</span>
-						<p></p>
-						<div class="paraTitle"><b>Feel the Success!</b></div><span>With successful training comes a sense of pride and accomplishment that lead to positive attitudes and life changing outcomes.  Being part of a team teaches healthy interdependence that will benefit athletes as young adults and stay with them for the rest of their lives.  Self-discipline, self-worth and personal responsibility learned through our programs establish a healthy foundation for athletes to utilize in all aspects of their social and professional futures.</span>
-					</div>
-					<div class="insetSide">
-						<p>"Extreme Athletics has taken our program to the next level.  Because of working with Coach Owens, we have gained higher recognition throughout the state.  The kids love working with him because of his energy and high standards! We would not be where we are today without his choreography and high expectations for the kids."</p>
-						<p>-Sara Gale, Head Coach<br>Germantown High School<br>Germantown, Wisconsin</p>
-						<p>
-						</p><p>"Extreme Athletics is one of the best things that ever happened to Lakeville.  Not only does it offer quality camps and instruction, its programs are geared toward the specific needs of each cheerleading squad.  The instructors are amazing and they have enabled my teams to perform at a higher level every year we work with them.  Coach Owens is a phenomenal choreographer who knows more than just how to do a good routine; he knows how to motivate cheerleaders to perform.  He is the quintessential choreographer for Lakeville, and his ideologies and methodologies align with what our school needs: quality, reliability and honesty."</p>
-						<p>-Susan Link, Head Coach<br>Lakeville North High School<br>Lakeville, Minnesota</p>
-						<p>
-						</p><p>"It is our privilege to know and work with Sam Owens.  He has added so much through the years to our daughter’s cheerleading experience.  Sam is an outstanding motivator, wonderful choreographer, creates great routines, and really is a tremendous positive influence on our daughter and her entire team. With Sam’s help, our daughter’s team met their goal of being top 10 in the nation this year.   Thank you for everything you do for the girls and our program."</p>
-						<p>-Kevin and Lori Davidson<br>Lakeville, Minnesota</p>
-						<p>
-						</p><p>"Our daughter Morgan has had the opportunity to work with Sam Owens for the past 5 years and in our eyes, he is more than 'just a coach/choreographer'.  He is a great motivator and team builder with the skills to get the team (and Morgan) to focus on the things that are really important in cheerleading and in life.  Thank you for all you do…you are definitely appreciated!"</p>
-						<p>-Carl and Karen Adams<br>Lakeville, Minnesota</p>
-					</div>
-					<div class="insetMainHeader">OUR MISSION</div>
-					<div class="insetSideHeader">TESTIMONIALS</div>
+				<div class="sectionContent" id="sectionContent4" style="position:absolute;left:150px;top:150px;width:600px;height:700px;color:white;">
+					College Prep Camp<br />Prepare for college tryouts. This camp is designed for individual athletes who intend on cheering at the college level. The camp will strengthen skills that are needed for college tryouts, such as co-ed and all-girl stunting, pyramids, jumps, motions and tumbling.
 				</div>
-				<div class="insetFrame" id="iF2">
-					<div class="insetMain">
-						<div class="paraTitle"><b>Residential Camps</b></div><span>Launch each season with an Extreme Athletics cheer camp!  Summer cheer camp provides your team with a jump start to your fall practice.  Accelerate your team’s skill level before your season starts by capitalizing on what they learn during the summer.  Our all-inclusive camps offer sessions to refresh your team’s basic skills and introduce them to new and challenging material.</span>
-						<p></p>
-						<div class="paraTitle"><b>College Prep Camp</b></div><span>Prepare for college tryouts.  This camp is designed for individual athletes who intend on cheering at the college level.  The camp will strengthen skills that are needed for college tryouts, such as co-ed and all-girl stunting, pyramids, jumps, motions and tumbling.</span>
-						<p></p>
-						<div class="paraTitle"><b>Choreography</b></div><span>Blow away the competition with an Extreme routine personally choreographed by Coach Owens.  You will receive the most innovative content with amazing choreography guaranteed to get your team noticed.  Routines from Extreme Athletics consistently finish among the top in the nation and your team can be part of the action.</span>
-						<p></p>
-						<div class="paraTitle"><b>Customized Music</b></div><span>An Extreme routine includes exciting and original music, digitally mastered for your choreography. Include your team’s name or mascot in the music to personalize it even more!  Our music will have your fans on their feet during your performance.</span>
-						<p></p>
-						<div class="paraTitle"><b>Private Camp</b></div><span>Hosted at a location of your choice; training can range from a few hours to as long as a week. Instruction includes clinics for Basic Skills, Transitions and Choreography.</span>
-					</div>
-					<div class="insetSide">
-						<div class="aniLink">
-							<a href="http://www.extreme-athletics.com/iowacamp.html" target = "_blank">Iowa Team Camp</a>
-						</div>
-						<br /><br />
-						<div class="aniLink">
-							<a href="http://www.extreme-athletics.com/wisconsin.html" target = "_blank">Wisconsin Team Camp</a>
-						</div>
-						<br /><br />
-						<div class="aniLink">
-							<a href="http://www.extreme-athletics.com/minnesota.html" target = "_blank">Minnesota Team Camp</a>
-						</div>
-						<br /><br />
-						<div class="aniLink">
-							<a href="http://www.extreme-athletics.com/collegeprep.html" target = "_blank">College Prep Camp</a>
-						</div>
-					</div>
+				<div class="sectionContent" id="sectionContent5" style="position:absolute;left:150px;top:150px;width:600px;height:700px;color:white;">
+					Choreography<br />Blow away the competition with an Extreme routine personally choreographed by Coach Owens. You will receive the most innovative content with amazing choreography guaranteed to get your team noticed. Routines from Extreme Athletics consistently finish among the top in the nation and your team can be part of the action.
 				</div>
-				<div class="insetFrame" id="iF3">
+				<div class="sectionContent" id="sectionContent6" style="position:absolute;left:150px;top:150px;width:600px;height:700px;color:white;">
+					Day Camp
+				</div>
+				<div class="sectionContent" id="sectionContent7" style="position:absolute;left:150px;top:150px;width:600px;height:700px;color:white;">
+					Choreography<br />Blow away the competition with an Extreme routine personally choreographed by Coach Owens. You will receive the most innovative content with amazing choreography guaranteed to get your team noticed. Routines from Extreme Athletics consistently finish among the top in the nation and your team can be part of the action.
+				</div>
+				<div class="sectionContent" id="sectionContent8" style="position:absolute;left:150px;top:150px;width:600px;height:700px;color:white;">
 					<div id="galleryMain">
 						<div id="gallerySlideBack">
 							<img src="image/233.PNG" />
@@ -206,7 +232,7 @@
 									<tr><td>
 										<img src="image/266741.jpg" />
 									</td></tr>
-								<div class="galleryDesc">Gopher With Grass<br /><a href="http://wall.alphacoders.com/big.php?i=266741">Link</a></div>
+									<div class="galleryDesc">Gopher With Grass<br /><a href="http://wall.alphacoders.com/big.php?i=266741">Link</a></div>
 								</table>
 							</div>
 						</div>
@@ -258,31 +284,81 @@
 						</div>
 					</div>
 				</div>
-				<div class="insetFrame" id="iF4">
-					<div class="insetMain">
-						<div>
-							<img src="image/254.PNG">
-						</div>
-						<div>
-							<div class="paraTitle">406 Madison Street NE<br />Minneapolis, MN 55413</div>
-							<p></p>
-							<div class="paraTitle">Telephone: 612.234.2350<br />E-mail: <a href="mailto:info@extreme-athletics.com" target = "_blank">info@extreme-athletics.com</a></div>
-							<p></p>
-							<div class="paraTitle"><a href="http://extreme-athletics.us1.list-manage.com/subscribe?u=f3656b32566bb3506a1629a21&id=c326e92dc7">Sign up for our Mailing List</a></div>
-							<p></p>
-							<div class="paraTitle"><a href="http://www.extreme-athletics.com/employment.html" target = "_blank">Employment</a></div>
-						</div>
-					</div>
+				<div class="sectionContent" id="sectionContent9" style="position:absolute;left:150px;top:150px;width:600px;height:700px;color:white;">
+					Competitions
 				</div>
-				<div class="bText" id="b1Text">HOME</div>
-				<div class="bClick" id="b1Click"></div>
-				<div class="bText" id="b2Text">SERVICES</div>
-				<div class="bClick" id="b2Click"></div>
-				<div class="bText" id="b3Text">GALLERY</div>
-				<div class="bClick" id="b3Click"></div>
-				<div class="bText" id="b4Text">CONTACT</div>
-				<div class="bClick" id="b4Click"></div>
+				<div class="sectionContent" id="sectionContent10" style="position:absolute;left:150px;top:150px;width:600px;height:700px;color:white;">
+					Inquiries<br />406 Madison Street NE<br />Minneapolis, MN 55413<br /><br />Telephone: 612.234.2350<br />E-mail: <a href="mailto:info@extreme-athletics.com" target = "_blank">info@extreme-athletics.com</a><br /><br /><a href="http://extreme-athletics.us1.list-manage.com/subscribe?u=f3656b32566bb3506a1629a21&id=c326e92dc7">Sign up for our Mailing List</a><br /><br /><a href="http://www.extreme-athletics.com/employment.html" target = "_blank">Employment</a>
+				</div>
 			</div>
-		</div>
-	</body>
-</html>
+		</main>
+		<footer style="position:absolute;top:1150px;width:900px;color:#4169E1;text-align:center;">
+			&copy; Copyright 2014 Extreme Athletics.  All rights reserved.
+			<br />
+				<!-- <audio autoplay="autoplay" controls="controls" loop="loop">
+					<source src="music/track1.mp3">
+					</audio> -->
+				</footer>
+			</div>
+			<script type="text/javascript">
+			$('.sectionContent').hide();
+			$('#sectionContentBack').hide();
+			var current_image=1;
+			var num_images=6;
+			var num_frames=Math.min($('.sectionButton').length,$('.sectionContent').length);
+
+			for(var i=1;i<=num_frames;i++){
+				(function(j) {					
+					$('#sectionButton'+j).click(function(){
+						$('.sectionContent').hide();
+						$('#sectionContentBack').hide().css({"left":$(this).css("left"),"top":$(this).css("top"),"width":$(this).css("width"),"height":$(this).css("height")}).show().animate({"left":$('#sectionContent'+j).css("left"),"top":$('#sectionContent'+j).css("top"),"width":$('#sectionContent'+j).css("width"),"height":$('#sectionContent'+j).css("height")},1000,(function(){$('#sectionContent'+j).show()}));
+					});
+				})(i);
+			}
+			var imageOn = function(i){
+				$('#slide'+i).fadeIn('100');
+			}
+
+			var imageOff = function(i){
+				$('#slide'+i).fadeOut('100');
+			}
+
+			var imageChange = function(i){
+				if(i!=current_image){
+					imageOff(current_image);
+					current_image=i;
+					imageOn(current_image);
+				}
+			}
+
+			$('.galleryThumbClick').css('cursor', 'pointer');
+
+			$('.galleryThumbClick').hover(function(){
+				$(this).css('box-shadow', '0px 0px 3px 3px #7f7fff');
+			}, function(){
+				$(this).css('box-shadow', '0px 0px 3px 3px #040710');
+			});
+
+			$('.galleryImage').hover(function(){
+				var h = $(this).find('.galleryDesc').height();
+				var o = 471 - h;
+				$(this).find('.galleryDesc').animate({ 'top': o });
+			},function(){
+				$(this).find('.galleryDesc').animate({ 'top': '471px' });
+			});
+
+			for(var i=1;i<=num_images;i++){
+				(function(j) {
+					$('#thumb'+j).click(function(){
+						imageChange(j);
+					});
+				})(i);
+				if(i!=current_image){
+					imageOff(i);
+				} else {
+					imageOn(i);
+				}
+			}
+			</script>
+		</body>
+		</html>
