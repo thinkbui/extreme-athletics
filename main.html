@@ -23,17 +23,18 @@
 		position:absolute;
 		top: 30px;
 		left: 0px;
-		width: 518px;
-		height: 481px;
+		width: 481px;
+		height: 581px;
 	}
 
 	#gallerySide{
 		position:absolute;
 		top: 30px;
 		right: 0px;
-		width: 160px;
-		height: 481px;
+		width: 140px;
+		height: 581px;
 		overflow: auto;
+		white-space:nowrap;
 	}
 
 	#gallerySlideBack{
@@ -48,29 +49,31 @@
 		position:absolute;
 		top: 0px;
 		left:0px;
-		height:481px;
-		width:518px;
+		height:581px;
+		width:441px;
 	}
 
 	.galleryImage{
 		position:absolute;
 		top: 5px;
 		left:5px;
-		height:471px;
-		width:508px;
+		height:571px;
+		width:431px;
 		border-radius: 6px;
 		overflow:hidden;
 		text-align:center;
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
+		background-color: #00005f;
+		box-shadow: 0px 0px 3px 3px #7f7fff;
 	}
 
 	.galleryDesc{
 		position:absolute;
-		top:471px;
+		top:571px;
 		left:0px;
-		width:508px;
+		width:431px;
 		background-color:rgb(127,127,127);
 		background-color:rgba(127,127,127,0.7);
 	}
@@ -89,15 +92,17 @@
 	}
 
 	.galleryImage img{
-		max-height:471px;
-		max-width:508px;
+		display:block;
+		margin: 0 auto;
+		max-height:571px;
+		max-width:471px;
 	}
 
 	.galleryThumb{
 		position:relative;
 		height:111px;
 		width:118px;
-		background-image:url('../image/14.PNG');
+		/*background-image:url('../image/14.PNG');*/
 	}
 
 	.galleryThumbImage{
@@ -127,7 +132,7 @@
 		width:108px;
 		border-radius: 6px;
 		overflow:hidden;
-		box-shadow: 0px 0px 3px 3px #040710;
+		box-shadow: 0px 0px 3px 3px #7f7fff;
 	}
 	</style>
 	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
@@ -174,7 +179,10 @@
 				</div>
 			</div>
 			<div id="sectionContent">
-				<div id="sectionContentBack" style="position:absolute;left:200px;top:300px;width:400px;height:400px;background-color:#4169E1;border:2px solid;border-color:#4CBB17;border-radius:10px;z-index:-1;"></div>
+				<div id="sectionContentStatic" style="position:absolute;left:150px;top:150px;width:600px;height:700px;color:black;z-index:-2">
+					OUR MISSION<br />Take your team to the extreme with customized music, choreography and training from Extreme Athletics, led by Sam Owens, head coach of the University of Minnesota Spirit Squad.<br /><br />Extreme Athletics is founded on the principle of building great kids through the sport of cheerleading. Coach Owens started in 1999, providing athletes and coaches with customized content and professional instruction designed specifically for the unique needs of their teams. Good sportsmanship, safety, personal development and healthy competition are the goals for every Extreme Team!<br /><br />Routines are carefully choreographed for each team and athletes are thoroughly instructed by experienced and professionally trained staff. Each routine is designed to challenge athletes while staying within the skill level of the team. Instruction is provided using proper techniques and without compromising safety.<br /><br />Be Your Best!<br />Extreme Athletics provides physical, emotional and intellectual coaching to young athletes through cheerleading, dance and music. Its coaches focus on developing youth into emotionally and physically strong adults by helping each athlete reach his/her highest potential. Athletes earn self esteem and pride from performing intense, disciplined routines that showcase their talent and skills. Responsibility, a sense of belonging and sportsmanship are felt by working with other athletes and competing against other teams.<br /><br />Feel the Success!<br />With successful training comes a sense of pride and accomplishment that lead to positive attitudes and life changing outcomes. Being part of a team teaches healthy interdependence that will benefit athletes as young adults and stay with them for the rest of their lives. Self-discipline, self-worth and personal responsibility learned through our programs establish a healthy foundation for athletes to utilize in all aspects of their social and professional futures.
+				</div>
+				<div id="sectionContentBack" style="position:absolute;left:150px;top:150px;width:600px;height:600px;background-color:#4169E1;border:2px solid;border-color:#4CBB17;border-radius:10px;z-index:-1;"></div>
 				<div class="sectionContent" id="sectionContent1" style="position:absolute;left:150px;top:150px;width:600px;height:700px;color:white;">
 					Residential Camps<br />Launch each season with an Extreme Athletics cheer camp! Summer cheer camp provides your team with a jump start to your fall practice. Accelerate your team's skill level before your season starts by capitalizing on what they learn during the summer. Our all-inclusive camps offer sessions to refresh your team's basic skills and introduce them to new and challenging material.
 				</div>
@@ -199,7 +207,7 @@
 				<div class="sectionContent" id="sectionContent8" style="position:absolute;left:150px;top:150px;width:600px;height:700px;color:white;">
 					<div id="galleryMain">
 						<div id="gallerySlideBack">
-							<img src="image/233.PNG" />
+							<!-- <img src="image/233.PNG" /> -->
 						</div>
 						<div id="slide1" class="gallerySlide">
 							<div class="galleryImage" style="background-image: url('image/29760.jpg');">
@@ -295,70 +303,70 @@
 		<footer style="position:absolute;top:1150px;width:900px;color:#4169E1;text-align:center;">
 			&copy; Copyright 2014 Extreme Athletics.  All rights reserved.
 			<br />
-				<!-- <audio autoplay="autoplay" controls="controls" loop="loop">
-					<source src="music/track1.mp3">
-					</audio> -->
-				</footer>
-			</div>
-			<script type="text/javascript">
-			$('.sectionContent').hide();
-			$('#sectionContentBack').hide();
-			var current_image=1;
-			var num_images=6;
-			var num_frames=Math.min($('.sectionButton').length,$('.sectionContent').length);
+			<!-- <audio autoplay="autoplay" controls="controls" loop="loop">
+				<source src="music/track1.mp3">
+			</audio> -->
+		</footer>
+	</div>
+	<script type="text/javascript">
+	$('.sectionContent').hide();
+	$('#sectionContentBack').hide();
+	var current_image=1;
+	var num_images=6;
+	var num_frames=Math.min($('.sectionButton').length,$('.sectionContent').length);
 
-			for(var i=1;i<=num_frames;i++){
-				(function(j) {					
-					$('#sectionButton'+j).click(function(){
-						$('.sectionContent').hide();
-						$('#sectionContentBack').hide().css({"left":$(this).css("left"),"top":$(this).css("top"),"width":$(this).css("width"),"height":$(this).css("height")}).show().animate({"left":$('#sectionContent'+j).css("left"),"top":$('#sectionContent'+j).css("top"),"width":$('#sectionContent'+j).css("width"),"height":$('#sectionContent'+j).css("height")},1000,(function(){$('#sectionContent'+j).show()}));
-					});
-				})(i);
-			}
-			var imageOn = function(i){
-				$('#slide'+i).fadeIn('100');
-			}
-
-			var imageOff = function(i){
-				$('#slide'+i).fadeOut('100');
-			}
-
-			var imageChange = function(i){
-				if(i!=current_image){
-					imageOff(current_image);
-					current_image=i;
-					imageOn(current_image);
-				}
-			}
-
-			$('.galleryThumbClick').css('cursor', 'pointer');
-
-			$('.galleryThumbClick').hover(function(){
-				$(this).css('box-shadow', '0px 0px 3px 3px #7f7fff');
-			}, function(){
-				$(this).css('box-shadow', '0px 0px 3px 3px #040710');
+	for(var i=1;i<=num_frames;i++){
+		(function(j) {					
+			$('#sectionButton'+j).click(function(){
+				$('.sectionContent').hide();
+				$('#sectionContentBack').hide().css({"left":$(this).css("left"),"top":$(this).css("top"),"width":$(this).css("width"),"height":$(this).css("height")}).show().animate({"left":$('#sectionContent'+j).css("left"),"top":$('#sectionContent'+j).css("top"),"width":$('#sectionContent'+j).css("width"),"height":$('#sectionContent'+j).css("height")},1000,(function(){$('#sectionContent'+j).show()}));
 			});
+		})(i);
+	}
+	var imageOn = function(i){
+		$('#slide'+i).fadeIn('100');
+	}
 
-			$('.galleryImage').hover(function(){
-				var h = $(this).find('.galleryDesc').height();
-				var o = 471 - h;
-				$(this).find('.galleryDesc').animate({ 'top': o });
-			},function(){
-				$(this).find('.galleryDesc').animate({ 'top': '471px' });
+	var imageOff = function(i){
+		$('#slide'+i).fadeOut('100');
+	}
+
+	var imageChange = function(i){
+		if(i!=current_image){
+			imageOff(current_image);
+			current_image=i;
+			imageOn(current_image);
+		}
+	}
+
+	$('.galleryThumbClick').css('cursor', 'pointer');
+
+	$('.galleryThumbClick').hover(function(){
+		$(this).css('box-shadow', '0px 0px 3px 3px #4CBB17');
+	}, function(){
+		$(this).css('box-shadow', '0px 0px 3px 3px #7f7fff');
+	});
+
+	$('.galleryImage').hover(function(){
+		var h = $(this).find('.galleryDesc').height();
+		var o = 571 - h;
+		$(this).find('.galleryDesc').animate({ 'top': o });
+	},function(){
+		$(this).find('.galleryDesc').animate({ 'top': '571px' });
+	});
+
+	for(var i=1;i<=num_images;i++){
+		(function(j) {
+			$('#thumb'+j).click(function(){
+				imageChange(j);
 			});
-
-			for(var i=1;i<=num_images;i++){
-				(function(j) {
-					$('#thumb'+j).click(function(){
-						imageChange(j);
-					});
-				})(i);
-				if(i!=current_image){
-					imageOff(i);
-				} else {
-					imageOn(i);
-				}
-			}
-			</script>
-		</body>
-		</html>
+		})(i);
+		if(i!=current_image){
+			imageOff(i);
+		} else {
+			imageOn(i);
+		}
+	}
+	</script>
+</body>
+</html>
