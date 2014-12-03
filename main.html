@@ -17,24 +17,28 @@
 		border:2px solid;
 		border-color:#4CBB17;
 		border-radius:10px;
+		cursor:pointer;
 	}
 
 	#galleryMain{
 		position:absolute;
-		top: 30px;
-		left: 0px;
-		width: 481px;
-		height: 581px;
+		top: 10px;
+		left: 10px;
+		width: 575px;
+		height: 551px;
 	}
 
 	#gallerySide{
 		position:absolute;
-		top: 30px;
-		right: 0px;
-		width: 140px;
-		height: 581px;
-		overflow: auto;
-		white-space:nowrap;
+		bottom: 10px;
+		left: 15px;
+		width: 575px;
+		height: 130px;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		white-space: nowrap;
+		border-radius: 6px;
+		box-shadow: 0px 0px 3px 3px #7f7fff;
 	}
 
 	#gallerySlideBack{
@@ -49,16 +53,16 @@
 		position:absolute;
 		top: 0px;
 		left:0px;
-		height:581px;
-		width:441px;
+		height:531px;
+		width:575px;
 	}
 
 	.galleryImage{
 		position:absolute;
 		top: 5px;
 		left:5px;
-		height:571px;
-		width:431px;
+		height:531px;
+		width:575px;
 		border-radius: 6px;
 		overflow:hidden;
 		text-align:center;
@@ -69,11 +73,16 @@
 		box-shadow: 0px 0px 3px 3px #7f7fff;
 	}
 
+	.galleryImage table,tr,td{
+		padding:0;
+		margin:0;
+	}
+
 	.galleryDesc{
 		position:absolute;
-		top:571px;
+		top:531px;
 		left:0px;
-		width:431px;
+		width:575px;
 		background-color:rgb(127,127,127);
 		background-color:rgba(127,127,127,0.7);
 	}
@@ -82,27 +91,29 @@
 		position:absolute;
 		top:0px;
 		left:0px;
-		width:508px;
+		width:575px;
 	}
 
 	.galleryDescText{
 		float:left;
-		width:508px;
+		width:575px;
 		z-index:6000;
 	}
 
 	.galleryImage img{
 		display:block;
 		margin: 0 auto;
-		max-height:571px;
-		max-width:471px;
+		max-height:521px;
+		max-width:575px;
 	}
 
 	.galleryThumb{
+		display: inline-block;
 		position:relative;
 		height:111px;
 		width:118px;
 		/*background-image:url('../image/14.PNG');*/
+		white-space: nowrap;
 	}
 
 	.galleryThumbImage{
@@ -133,6 +144,7 @@
 		border-radius: 6px;
 		overflow:hidden;
 		box-shadow: 0px 0px 3px 3px #7f7fff;
+		cursor:pointer;
 	}
 	</style>
 	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
@@ -339,8 +351,6 @@
 		}
 	}
 
-	$('.galleryThumbClick').css('cursor', 'pointer');
-
 	$('.galleryThumbClick').hover(function(){
 		$(this).css('box-shadow', '0px 0px 3px 3px #4CBB17');
 	}, function(){
@@ -349,10 +359,10 @@
 
 	$('.galleryImage').hover(function(){
 		var h = $(this).find('.galleryDesc').height();
-		var o = 571 - h;
+		var o = 531 - h;
 		$(this).find('.galleryDesc').animate({ 'top': o });
 	},function(){
-		$(this).find('.galleryDesc').animate({ 'top': '571px' });
+		$(this).find('.galleryDesc').animate({ 'top': '531px' });
 	});
 
 	for(var i=1;i<=num_images;i++){
